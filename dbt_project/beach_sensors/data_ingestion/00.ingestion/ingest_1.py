@@ -8,7 +8,7 @@ def load_json_files(file_paths):
     """Load JSON files and return them as pandas DataFrames."""
     dataframes = []
     for year, file_path in file_paths.items():
-        api_url = f"https://data.cityofchicago.org/resource/{file_path}.json"
+        api_url = f"https://data.cityofchicago.org/resource/{file_path}.json?$limit=30000"
         try:
             response = requests.get(api_url)
             response.raise_for_status()

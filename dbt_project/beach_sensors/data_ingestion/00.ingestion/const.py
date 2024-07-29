@@ -1,5 +1,5 @@
 
-output_directory = "../../datalake/bronze_layer/chicago_city_data/beach-sensors/"
+output_directory = "./datalake/bronze_layer/chicago_city_data/beach-sensors/"
 
 json_files = {
     '2015': '5rxc-uczg',

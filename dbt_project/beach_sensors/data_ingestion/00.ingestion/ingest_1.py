@@ -54,7 +54,6 @@ def main(file_paths, output_dir):
     stg_statements = []
     for partition_name, df in dataframes:
         stg_statements.append(save_partition_to_csv(df, partition_name, output_dir))
-    print(stg_statements)
     os.makedirs(const.dest_file_directory_staging, exist_ok=True)
     dest_file_path = os.path.join(const.dest_file_directory_staging, "stg_all_data.sql")
     helper.create_stg_sql_file(stg_statements, dest_file_path)

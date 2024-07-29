@@ -10,7 +10,6 @@ SELECT
     {header}
 FROM read_csv('./datalake/bronze_layer/chicago_city_data/beach-sensors/{partition_name}/data_{partition_name}.csv')
     """
-    print(sql_content)
     try:
         with open(dest_file_path, 'w') as file:
            file.write(sql_content) 
@@ -44,7 +43,6 @@ def create_stg_sql_file(list_stg_statements, dest_file_path):
     sql_content_2 += f"""SELECT * FROM data_{const.json_keys[-1]}"""
 
     sql_content = sql_first_statement + sql_content_1 + sql_content_2
-    print(sql_content)
     try:
         with open(dest_file_path, 'w') as file:
            file.write(sql_content) 

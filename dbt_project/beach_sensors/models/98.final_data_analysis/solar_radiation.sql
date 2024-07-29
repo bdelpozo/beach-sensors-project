@@ -17,4 +17,4 @@ SELECT
     year_e,
     sensor_latitude,
     sensor_longitude
-FROM dbt_green.fact_sensors_data
+FROM dbt_blue.fact_sensors_data

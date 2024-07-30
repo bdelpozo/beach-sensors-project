@@ -1,0 +1,71 @@
+version: 2
+
+models:
+- name: fact_sensors_data
+  columns:
+    - name: ID
+      data_tests:
+        - unique
+    - name: station_name
+      data_tests:
+        - not_null
+        - dbt_expectations.expect_column_values_to_be_of_type:
+              column_type: varchar
+    - name: year_e
+      data_tests:
+        - not_null
+        - dbt_expectations.expect_column_values_to_be_between:
+            min_value: 2015
+            max_value: 2024
+    - name: month_e
+      data_tests:
+        - not_null
+        - dbt_expectations.expect_column_values_to_be_between:
+            min_value: 1
+            max_value: 12
+    - name: day_e
+      data_tests:
+        - not_null
+        - dbt_expectations.expect_column_values_to_be_between:
+            min_value: 1
+            max_value: 31
+    - name: hour_e
+      data_tests:
+        - not_null
+        - dbt_expectations.expect_column_values_to_be_between:
+            min_value: 0
+            max_value: 23
+    - name: air_temperature
+      data_tests:
+        - not_null
+        - dbt_expectations.expect_column_values_to_be_between:
+            min_value: -90
+            max_value: 60
+    - name: humidity
+      data_tests:
+        - not_null
+        - dbt_expectations.expect_column_values_to_be_between:
+            min_value: 0
+            max_value: 100
+    - name: barometric_pressure
+      data_tests:
+        - not_null
+        - dbt_expectations.expect_column_values_to_be_between:
+            min_value: 870
+            max_value: 1084
+    - name: solar_radiation
+      data_tests:
+        - not_null
+        - dbt_expectations.expect_column_values_to_be_between:
+            min_value: 0
+            max_value: 1361
+    - name: sensor_latitude
+      tests:
+        - dbt_expectations.expect_column_values_to_be_between:
+            min_value: -90.00
+            max_value: 90.00
+    - name: sensor_longitude
+      tests:
+        - dbt_expectations.expect_column_values_to_be_between:
+            min_value: -180.00000
+            max_value: 180.00

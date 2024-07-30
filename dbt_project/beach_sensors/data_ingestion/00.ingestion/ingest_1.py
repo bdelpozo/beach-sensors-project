@@ -8,7 +8,7 @@ def load_json_files(file_paths):
     """Load JSON files and return them as pandas DataFrames."""
     dataframes = []
     for year, file_path in file_paths.items():
-        api_url = f"https://data.cityofchicago.org/resource/{file_path}.json"
+        api_url = f"https://data.cityofchicago.org/resource/{file_path}.json?$limit=30000"
         try:
             response = requests.get(api_url)
             response.raise_for_status()
@@ -54,7 +54,6 @@ def main(file_paths, output_dir):
     stg_statements = []
     for partition_name, df in dataframes:
         stg_statements.append(save_partition_to_csv(df, partition_name, output_dir))
-    print(stg_statements)
     os.makedirs(const.dest_file_directory_staging, exist_ok=True)
     dest_file_path = os.path.join(const.dest_file_directory_staging, "stg_all_data.sql")
     helper.create_stg_sql_file(stg_statements, dest_file_path)

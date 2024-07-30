@@ -39,7 +39,7 @@ docker-compose up
 To enter into the container:
 
 ```bash
-docker exec -it //bin/sh dbt-beach-sensors
+docker exec -it dbt-beach-sensors //bin/sh
 ```
 
 ## Running

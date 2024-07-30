@@ -53,12 +53,6 @@ The project uses a orchestrator for running. You can run the project using the f
 cd beach_sensors
 ```
 
-Run this command that make sure that all dependencies are well installed:
-
-```bash
-pip install dbt dbt-duckdb dlt streamlit pandas==2.0.3 pyarrow==14.0.2 numpy==1.24.3 duckdb==0.10.3
-```
-
 ```sh
 python orchestrator.py
 ```

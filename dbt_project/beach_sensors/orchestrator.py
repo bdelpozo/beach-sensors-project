@@ -13,6 +13,7 @@ def run_dlt_load():
 def run_dbt_transform():
     print("Starting data transformation with DBT...")
     try:
+        subprocess.run(['dbt', 'deps'], check=True)
         subprocess.run(['dbt', 'run'], check=True)
         print("Data transformations completed.")
     except subprocess.CalledProcessError as e:

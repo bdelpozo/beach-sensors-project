@@ -3,7 +3,7 @@ services:
   dbt_demo:
     build:
       context: .      
-    image: t_dbt
+    image: beachsensorsproject
     container_name: dbt-beach-sensors
     volumes:
       - ./dbt_project:/dbt_project

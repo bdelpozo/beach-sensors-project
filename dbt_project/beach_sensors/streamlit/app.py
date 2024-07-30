@@ -1,6 +1,5 @@
 from datetime import datetime
 import streamlit as st
-import matplotlib as plt
 import duckdb
 import pandas as pd
 

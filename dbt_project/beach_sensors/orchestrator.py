@@ -38,7 +38,7 @@ def run_blue_to_green():
 
 def run_load_data_to_datalake_layers():
     try:
-        subprocess.run(['python', './loader/loader.py'], check=True)
+        subprocess.run(['python', 'loader/loader.py'], check=True)
         print("Completed loading.")
     except subprocess.CalledProcessError as e:
         print(f"Error in loading: {e}")

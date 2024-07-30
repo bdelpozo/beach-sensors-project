@@ -57,7 +57,7 @@ cd beach_sensors
 python orchestrator.py
 ```
 
-
+If you want to see how the datalake is created, just remove datalake directory and execute the orchestrator again.
 
 ## Visualize
 
